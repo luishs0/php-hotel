@@ -57,8 +57,9 @@ $hotels = [
     for ($i = 0; $i < count($hotels); $i++) {
         $cur_hotel = $hotels[$i];
         foreach ($cur_hotel as $feature => $value) {
-            echo $value . "<br>";
+            echo $value . " " . " ";
         }
+        echo "<br>";
     }
     ?>
 

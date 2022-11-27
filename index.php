@@ -48,6 +48,7 @@ $hotels = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Hotels</title>
 </head>
 
@@ -56,12 +57,57 @@ $hotels = [
     <?php
     for ($i = 0; $i < count($hotels); $i++) {
         $cur_hotel = $hotels[$i];
+        echo '<th>' . $cur_hotel["name"] . '</th>';
+        echo "<br>";
         foreach ($cur_hotel as $feature => $value) {
             echo $value . " " . " ";
         }
         echo "<br>";
     }
     ?>
+
+    <table class="table">
+
+        <hr>
+
+        <thead>
+
+            <tr>
+                <th scope="col"> <?php echo "Nome" ?> </th>
+                <th scope="col"> <?php echo "Descrizione" ?> </th>
+                <th scope="col"> <?php echo "Parking" ?> </th>
+                <th scope="col"> <?php echo "Voto" ?> </th>
+                <th scope="col"> <?php echo "Distanza al centro" ?> </th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <?php foreach ($hotels as $cur_hotel) { ?>
+                <tr>
+                    <th scope="row"> <?php echo $cur_hotel["name"] ?> </th>
+                    <td> <?php echo $cur_hotel["description"] ?> </td>
+                    <td>
+                        <?php
+                        if ($cur_hotel["parking"] === true) {
+                            echo "Si";
+                        } else {
+                            echo "No";
+                        }
+                        ?>
+                    </td>
+                    <td> <?php echo $cur_hotel["vote"] ?> </td>
+                    <td> <?php echo $cur_hotel["distance_to_center"] ?> </td>
+                </tr>
+            <?php } ?>
+
+
+
+        </tbody>
+
+    </table>
 
 </body>
 

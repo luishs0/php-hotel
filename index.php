@@ -71,15 +71,13 @@ $hotels = [
         <hr>
 
         <thead>
-
             <tr>
-                <th scope="col"> <?php echo "Nome" ?> </th>
-                <th scope="col"> <?php echo "Descrizione" ?> </th>
-                <th scope="col"> <?php echo "Parking" ?> </th>
-                <th scope="col"> <?php echo "Voto" ?> </th>
-                <th scope="col"> <?php echo "Distanza al centro" ?> </th>
-            </tr>
+                <?php foreach ($cur_hotel as $key => $value) { ?>
 
+                    <th> <?php echo $key; ?> </th>
+
+                <?php } ?>
+            </tr>
         </thead>
 
 
